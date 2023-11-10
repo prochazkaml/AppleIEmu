@@ -1,1 +1,1 @@
-%#incfun "src/cpucore/microcode/stack_push.m" ~ = p
+%#incfun "src/cpucore/microcode/memory/stack_push.m" ~ = p

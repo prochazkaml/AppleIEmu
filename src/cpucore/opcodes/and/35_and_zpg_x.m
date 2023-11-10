@@ -1,3 +1,3 @@
-%#incfun "src/cpucore/microcode/addr_zpg_x.m" tmp16 = ~
-%#incfun "src/cpucore/microcode/getbyte.m" tmp8 = tmp16
-%#incfun "src/cpucore/microcode/insn_and.m" a = tmp8
+%#incfun "src/cpucore/microcode/addr/zpg_x.m" tmp16 = ~
+%#incfun "src/cpucore/microcode/memory/getbyte.m" tmp8 = tmp16
+%#incfun "src/cpucore/microcode/insn/and.m" a = tmp8

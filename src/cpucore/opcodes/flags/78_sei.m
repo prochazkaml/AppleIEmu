@@ -1,4 +1,4 @@
-%#incdefs "src/cpucore/microcode/definitions.txt"
+%#incdefs "src/cpucore/microcode/flags/definitions.txt"
 
 SET_INTERRUPT_FLAG;
 

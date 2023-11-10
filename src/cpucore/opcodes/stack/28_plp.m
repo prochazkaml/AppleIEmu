@@ -1,1 +1,1 @@
-%#incfun "src/cpucore/microcode/stack_pop.m" p = ~
+%#incfun "src/cpucore/microcode/memory/stack_pop.m" p = ~

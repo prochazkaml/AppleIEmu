@@ -5,4 +5,4 @@
 
 __ret1 = bitor(__ret1, __arg1)
 
-%#incfun "src/cpucore/microcode/updatenz.m" ~ = __ret1
+%#incfun "src/cpucore/microcode/flags/updatenz.m" ~ = __ret1

@@ -4,4 +4,4 @@
 s = s + 1;
 tmp16 = uint16(s) + 0x100;
 
-%#incfun "src/cpucore/microcode/getbyte.m" __ret1 = tmp16
+%#incfun "src/cpucore/microcode/memory/getbyte.m" __ret1 = tmp16

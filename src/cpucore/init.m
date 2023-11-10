@@ -129,6 +129,6 @@ applerom = [
 a = 0x00
 x = 0x00
 y = 0x00
-%#incfun "src/cpucore/microcode/getword.m" pc = 0xFFFC
+%#incfun "src/cpucore/microcode/memory/getword.m" pc = 0xFFFC
 p = 0x20 % Bit 5 is always 1
 s = 0xFF

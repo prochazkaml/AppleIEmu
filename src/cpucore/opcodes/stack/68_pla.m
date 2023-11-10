@@ -1,2 +1,2 @@
-%#incfun "src/cpucore/microcode/stack_pop.m" a = ~
-%#incfun "src/cpucore/microcode/updatenz.m" ~ = a
+%#incfun "src/cpucore/microcode/memory/stack_pop.m" a = ~
+%#incfun "src/cpucore/microcode/flags/updatenz.m" ~ = a

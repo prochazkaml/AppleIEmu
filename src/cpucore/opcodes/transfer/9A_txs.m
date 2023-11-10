@@ -1,3 +1,3 @@
 s = x;
 
-%#incfun "src/cpucore/microcode/updatenz.m" ~ = s
+%#incfun "src/cpucore/microcode/flags/updatenz.m" ~ = s

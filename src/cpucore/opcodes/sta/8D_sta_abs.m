@@ -1,2 +1,2 @@
-%#incfun "src/cpucore/microcode/addr_abs.m" tmp16 = ~
-%#incfun "src/cpucore/microcode/setbyte.m" ~ = tmp16 a
+%#incfun "src/cpucore/microcode/addr/abs.m" tmp16 = ~
+%#incfun "src/cpucore/microcode/memory/setbyte.m" ~ = tmp16 a

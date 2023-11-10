@@ -3,6 +3,6 @@
 
 tmp16 = uint16(s) + 0x100;
 
-%#incfun "src/cpucore/microcode/getbyte.m" tmp16 = __arg1
+%#incfun "src/cpucore/microcode/memory/getbyte.m" tmp16 = __arg1
 
 s = s - 1;

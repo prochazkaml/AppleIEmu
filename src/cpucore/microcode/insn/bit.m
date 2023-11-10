@@ -7,4 +7,4 @@ __ret1 = bitor(bitand(__ret1, 0x3F), bitand(__arg1, 0xC0));
 
 tmp8 = bitand(a, __arg1);
 
-%#incfun "src/cpucore/microcode/updatez.m" ~ = tmp8
+%#incfun "src/cpucore/microcode/flags/updatez.m" ~ = tmp8
