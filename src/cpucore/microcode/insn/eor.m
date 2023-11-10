@@ -1,4 +1,4 @@
-% Parses the EOR instruction.
+% Implements the EOR instruction.
 
 % __ret1 = return value
 % __arg1 = source data

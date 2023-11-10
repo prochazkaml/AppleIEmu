@@ -1,4 +1,4 @@
-% Parses the AND instruction.
+% Implements the AND instruction.
 
 % __ret1 = return value
 % __arg1 = source data

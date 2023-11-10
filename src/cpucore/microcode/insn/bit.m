@@ -1,4 +1,4 @@
-% Parses the BIT instruction.
+% Implements the BIT instruction.
 
 % __ret1 = return value (most likely the P register)
 % __arg1 = source data
