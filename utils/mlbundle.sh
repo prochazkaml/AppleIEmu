@@ -72,7 +72,7 @@ function incfun {
 		field=$((field+1))
 	done
 
-	echo "%%% ================ Including function file $1 ================"
+	echo "%%% ================ Including function file $1 (arguments: $2) ================"
 
 	$0 "$1" | sed "$funsedlist"
 }
