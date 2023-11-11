@@ -1,4 +1,4 @@
-% Parses the DEC instruction.
+% Implements the DEC instruction.
 
 % __ret1 = return value
 % __arg1 = source data

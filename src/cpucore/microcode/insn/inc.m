@@ -1,4 +1,4 @@
-% Parses the INC instruction.
+% Implements the INC instruction.
 
 % __ret1 = return value
 % __arg1 = source data
