@@ -19,3 +19,4 @@ b = 0x00 % Opcode byte
 tmp8 = 0x00
 tmp16 = 0x0000
 tmp16_2 = 0x0000
+tmp32 = 0x00000000
