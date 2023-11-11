@@ -132,3 +132,7 @@ y = 0x00
 %#incfun "src/cpucore/microcode/memory/getword.m" pc = 0xFFFC
 p = 0x20 % Bit 5 is always 1
 s = 0xFF
+
+tmp8 = 0x00
+tmp16 = 0x0000
+tmp16_2 = 0x0000
