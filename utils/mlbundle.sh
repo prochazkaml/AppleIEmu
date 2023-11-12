@@ -8,6 +8,12 @@
 #   %#include "file" - includes the contents of "file" at the current position (that file will also be processed)
 #   %#incbin "file" - includes the contents of "file" as a byte row vector at the current position
 
+cachedir="build/bundlecache"
+
+if [ ! -d "$cachedir" ]; then
+	mkdir -p "$cachedir"
+fi
+
 if [ $# -ne 1 ]; then
 	echo "Usage: $0 <file>" 1>&2
 	exit 1
@@ -40,12 +46,20 @@ function incdefs {
 
 	echo "%%% ================ Including definitions file $1 ================"
 
-	while read line; do
-		if [ "$line" ]; then
-			line=`echo "$line" | sed "$sedlist"`
-			sedlist="${sedlist}s/`echo $line | cut -d" " -f1`/`echo $line | cut -d" " -f2-`/g;"
-		fi
-	done < $1
+	cachename="$cachedir/`echo "$1" | tr / _`"
+
+	if [ ! -f "$cachename" ] || [ "$1" -nt "$cachename" ]; then
+		while read line; do
+			if [ "$line" ]; then
+				line=`echo "$line" | sed "$sedlist"`
+				sedlist="${sedlist}s/`echo $line | cut -d" " -f1`/`echo $line | cut -d" " -f2-`/g;"
+			fi
+		done < $1
+
+		echo "$sedlist" > "$cachename"
+	else
+		sedlist=`cat "$cachename"`		
+	fi
 }
 
 function incfun {
