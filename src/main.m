@@ -12,7 +12,6 @@
 % - if an error occurs, shut down the figure
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
-% - remove all unnecessary uint8()/uint16()/int16() conversions for extra speed!
 % - try out some rendering options
 % - test MATLAB's audio capability
 
