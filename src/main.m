@@ -14,6 +14,7 @@
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
 % - try out some rendering options
 % - test MATLAB's audio capability
+% - integrated editor, assembler & debugger
 
 clc; clearvars;
 
