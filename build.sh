@@ -18,9 +18,9 @@ fi
 
 echo "Building system ROM..."
 
-xa -C -o build/tutortxt.bin rom/tutortxt.asm
+xa -C -o build/tutortxt.bin -l build/tutortxt.lst rom/tutortxt.asm
 ./build/compressor build/tutortxt.bin build/tutortxt.cmp
-xa -C -o build/rom.bin rom/main.asm
+xa -C -o build/rom.bin -l build/rom.lst rom/main.asm
 
 #xxd -i -c 256 rom.bin | grep -v "rom_" | grep -v "}" | sed "s/,$/ .../g" | sed "s/,//g" | xclip -selection clipboard
 
