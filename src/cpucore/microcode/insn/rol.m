@@ -10,7 +10,7 @@ if(__arg1 >= 0x80)
 	SET_CARRY_FLAG;
 else
 	__ret1 = __arg1 * 0x2 + bitand(p, __CARRY_FLAG);
-	CLEAR_CARRY_FLAG;
+	CLR_CARRY_FLAG;
 end
 
 %#incfun "src/cpucore/microcode/flags/updatenz.m" ~ = __ret1

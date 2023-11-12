@@ -8,4 +8,4 @@ else
 	tmp32 = int32(__arg1);
 end
 
-pc = uint16(int32(pc) + tmp32);
+pc = uint16(int32(pc + 0x0001) + tmp32);

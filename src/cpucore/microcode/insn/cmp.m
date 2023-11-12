@@ -3,11 +3,13 @@
 % __arg1 = data to compare against
 % __arg2 = source data
 
+%#incdefs "src/cpucore/microcode/flags/definitions.txt"
+
 tmps16 = int16(__arg1) - int16(__arg2);
 
 if(tmps16 < int16(0x0000)) % Carry flag (bit 0) set if *not* overflow
 	tmps16 = tmps16 + int16(0x100);
-	CLEAR_CARRY_FLAG;
+	CLR_CARRY_FLAG;
 else
 	SET_CARRY_FLAG;
 end
