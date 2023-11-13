@@ -48,7 +48,7 @@ function incdefs {
 
 	cachename="$cachedir/`echo "$1" | tr / _`"
 
-	if [ ! -f "$cachename" ] || [ "$1" -nt "$cachename" ]; then
+	if [ ! -f "$cachename" ]; then
 		while read line; do
 			if [ "$line" ]; then
 				line=`echo "$line" | sed "$sedlist"`
@@ -60,6 +60,8 @@ function incdefs {
 	else
 		sedlist=`cat "$cachename"`		
 	fi
+
+	echo "cachename: $cachename" 1>&2
 }
 
 function incfun {
@@ -88,7 +90,14 @@ function incfun {
 
 	echo "%%% ================ Including function file $1 (arguments: $2) ================"
 
-	$0 "$1" | sed "$funsedlist"
+	cachename="$cachedir/`echo "$1" | tr / _`.`echo "$2" | tr " " _`"
+	echo "cachename: $cachename" 1>&2
+
+	if [ ! -f "$cachename" ]; then
+		$0 "$1" | sed "$funsedlist" > "$cachename"
+	fi
+
+	cat "$cachename"
 }
 
 echo "%%% ================ Bundled file $1 start ================"

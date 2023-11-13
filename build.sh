@@ -29,6 +29,7 @@ xa -C -o build/rom.bin -l build/rom.lst rom/main.asm
 echo "Building MATLAB script..."
 
 ./utils/genillegal.sh
+rm -rf build/bundlecache
 ./utils/mlbundle.sh src/main.m > build/emu6502.m
 
 echo "Done."
