@@ -43,19 +43,21 @@ kbdmap = [... % 0x00 = invalid character
     0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5A 0x5B 0x5C 0x5D 0x2D 0x21 ...
 ];
 
-%#include "src/terminal/init.m"
+%#include "src/gui/init.m"
 %#include "src/cpucore/init.m"
 
 global running;
 running = 1;
 
-while(running)
-%#include "src/terminal/update.m"
+while(running && isvalid(MainFigure))
+%#include "src/gui/terminal/update.m"
 % #include "src/cpucore/debug.m"
 %#include "src/cpucore/executeinstruction.m"
 end
 
 % Subroutines
 
-%#include "src/cpucore/subroutines.*"
-%#include "src/terminal/subroutines.m"
+%#include "src/cpucore/subroutines.m"
+%#include "src/gui/settings/terminal/subroutines.m"
+%#include "src/gui/terminal/subroutines.m"
+%#include "src/gui/about/subroutines.m"

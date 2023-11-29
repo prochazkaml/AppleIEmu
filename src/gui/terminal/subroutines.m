@@ -1,12 +1,13 @@
-function label = CreateTermLabel(figure, row, text)
+function label = CreateTermLabel(grid, row, text)
     global config;
 
-    label = uilabel(figure);
+    label = uilabel(grid);
     label.FontName = "monospace";
     label.FontSize = config.FontSize;
     label.Text = text;
     label.FontColor = [0, 1, 0];
-    label.Position = [0, (row - 1) * config.RowSpacing, config.RowSpacing * 42, 30];
+    label.Layout.Row = row;
+    label.Layout.Column = 1;
 end
 
 function CursorBlink(tmr, ~)
@@ -24,7 +25,7 @@ function CursorBlink(tmr, ~)
     end
 end
 
-function KeyPress(~, EventData)
+function MainFigureKeyPress(~, EventData)
     global kbdmap;
     global keybuf;
 
