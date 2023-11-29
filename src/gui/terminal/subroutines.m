@@ -10,8 +10,7 @@ function label = CreateTermLabel(grid, row, text)
     label.Layout.Column = 1;
 end
 
-function CursorBlink(tmr, ~)
-    global cursor;
+function CursorBlink(tmr, cursor)
     global running;
 
     if isvalid(cursor) == false
@@ -35,17 +34,15 @@ function MainFigureKeyPress(~, EventData)
     
     if (size(chrid, 1) == 1) && (chrid < size(kbdmap, 2)) && (kbdmap(chrid + 1) ~= 0x00)
         keybuf = kbdmap(chrid + 1) + 0x80;
-        %WriteTerminal(kbdmap(chrid + 1) + 0x80);
     end
 end
 
-function WriteTerminal(c)
+function WriteTerminal(c, lbl)
     % Possible values:
     % 0x8D = Newline
     % 0xC0-0xFF = Characters (mapped to ASCII 0x40-0x5F and 0x20-0x3F)
 
-    global lbl;
-    global cursor;
+    cursor = lbl{27};
 
     chrid = bitand(uint8(c), 0x7F);
 

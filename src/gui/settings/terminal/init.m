@@ -140,7 +140,7 @@ BackLamp.Layout.Column = 2;
 BackLamp.Color = [0 0 0];
 
 % Make the colour sliders work
-TerminalColourUpdateFun = @(src, event) TerminalColourChange(TextRedSlider, TextGreenSlider, TextBlueSlider, BackRedSlider, BackGreenSlider, BackBlueSlider, TextLamp, BackLamp, EmulatorTabTerminalLayout, lbl);
+TerminalColourUpdateFun = @(src, event) TerminalColourChange(TextRedSlider, TextGreenSlider, TextBlueSlider, BackRedSlider, BackGreenSlider, BackBlueSlider, TextLamp, BackLamp, EmulatorTabTerminalLayout, TerminalLabels);
 
 TextRedSlider.ValueChangedFcn = TerminalColourUpdateFun;
 TextGreenSlider.ValueChangedFcn = TerminalColourUpdateFun;
