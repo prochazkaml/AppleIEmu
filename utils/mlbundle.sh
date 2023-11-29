@@ -58,10 +58,10 @@ function incdefs {
 
 		echo "$sedlist" > "$cachename"
 	else
+		echo "   (using cached $cachename)" 1>&2
+
 		sedlist=`cat "$cachename"`		
 	fi
-
-	echo "cachename: $cachename" 1>&2
 }
 
 function incfun {
@@ -91,10 +91,11 @@ function incfun {
 	echo "%%% ================ Including function file $1 (arguments: $2) ================"
 
 	cachename="$cachedir/`echo "$1" | tr / _`.`echo "$2" | tr " " _`"
-	echo "cachename: $cachename" 1>&2
 
 	if [ ! -f "$cachename" ]; then
 		$0 "$1" | sed "$funsedlist" > "$cachename"
+	else
+		echo "   (using cached $cachename)" 1>&2
 	fi
 
 	cat "$cachename"
