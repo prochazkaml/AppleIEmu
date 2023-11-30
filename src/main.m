@@ -8,7 +8,6 @@
 %   - 256 byte WozMon ROM (0xFF00-0xFFFF).
 
 % TODO
-% - add a reset button
 % - if an error occurs, shut down the figure
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
@@ -46,6 +45,10 @@ kbdmap = [... % 0x00 = invalid character
 
 profileinsns = zeros(1);
 insns = 0;
+
+global shouldreset;
+shouldreset = 0;
+
 tic;
 
 while(isvalid(MainFigure))
@@ -59,6 +62,12 @@ while(isvalid(MainFigure))
         insns = 0;
     end
 
+    if shouldreset == 1
+%#include "src/cpucore/reset.m"
+
+        shouldreset = 0;
+    end
+
 %#include "src/gui/terminal/update.m"
 % #include "src/cpucore/debug.m"
 %#include "src/cpucore/executeinstruction.m"
@@ -70,6 +79,7 @@ end
 
 %#include "src/cpucore/subroutines.m"
 %#include "src/gui/settings/terminal/subroutines.m"
+%#include "src/gui/emulator/subroutines.m"
 %#include "src/gui/terminal/subroutines.m"
 %#include "src/gui/profiler/subroutines.m"
 %#include "src/gui/about/subroutines.m"

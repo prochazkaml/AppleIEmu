@@ -62,3 +62,4 @@ EmulatorResetButton.FontColor = [1 1 1];
 EmulatorResetButton.Layout.Row = 6;
 EmulatorResetButton.Layout.Column = 1;
 EmulatorResetButton.Text = 'RESET SYSTEM';
+EmulatorResetButton.ButtonPushedFcn = @EmulatorResetButtonPushed;
