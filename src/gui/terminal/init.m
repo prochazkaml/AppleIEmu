@@ -11,7 +11,7 @@ TerminalLabels{26} = CreateTermLabel(EmulatorTabTerminalLayout, 26, "+----------
 
 % Create a blinking cursor label
 
-TerminalLabels{27} = CreateTermLabel(EmulatorTabTerminalLayout, 25, " @");;
+TerminalLabels{27} = CreateTermLabel(EmulatorTabTerminalLayout, 25, " @");
 
 curtmr = timer();
 curtmr.TimerFcn = @(tmr, event) CursorBlink(tmr, TerminalLabels{27});

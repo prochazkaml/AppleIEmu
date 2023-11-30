@@ -9,7 +9,8 @@ ProfilerTabGridLayout.RowHeight = {'1x', 30};
 
 % Create ProfilerFigure
 ProfilerFigure = uiaxes(ProfilerTabGridLayout);
-xlabel(ProfilerFigure, 'Time since startup (s)')
+xlabel(ProfilerFigure, 'Time since startup (s)');
+ylabel(ProfilerFigure, 'Executed instructions per second');
 ProfilerFigure.Toolbar.Visible = 'off';
 ProfilerFigure.Layout.Row = 1;
 ProfilerFigure.Layout.Column = 1;

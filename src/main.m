@@ -49,10 +49,27 @@ kbdmap = [... % 0x00 = invalid character
 global running;
 running = 1;
 
+global profileinsns;
+profileinsns = zeros(1);
+insns = 0;
+tic;
+
 while(running && isvalid(MainFigure))
+    if toc >= 1
+        tic;
+
+        % fprintf("Executed: %d\n", insns);
+        profileinsns(length(profileinsns) + 1) = insns;
+        UpdateProfiler(profileinsns, ProfilerFigure);
+
+        insns = 0;
+    end
+
 %#include "src/gui/terminal/update.m"
 % #include "src/cpucore/debug.m"
 %#include "src/cpucore/executeinstruction.m"
+
+    insns = insns + 1;
 end
 
 % Subroutines
@@ -60,4 +77,5 @@ end
 %#include "src/cpucore/subroutines.m"
 %#include "src/gui/settings/terminal/subroutines.m"
 %#include "src/gui/terminal/subroutines.m"
+%#include "src/gui/profiler/subroutines.m"
 %#include "src/gui/about/subroutines.m"
