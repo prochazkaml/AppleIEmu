@@ -5,18 +5,46 @@ function UpdateProfiler(profiledata, figure)
 		return
 	end
 
-	global profilerperiod;
+	global profilerduration;
 
-	interval = 1:profilerperiod;
+	if profilerduration == 0 % 0 = plot everything
+		plot(figure, 1:length(profiledata), profiledata);
+		return
+	end
+
+	interval = 1:profilerduration;
 	
-	if length(profiledata) < profilerperiod
-		plot(figure, interval, [zeros(1, profilerperiod - length(profiledata)), profiledata]);
+	if length(profiledata) < profilerduration
+		plot(figure, interval, [zeros(1, profilerduration - length(profiledata)), profiledata]);
 	else
-		plot(figure, interval, profiledata(end-profilerperiod+1:end));
+		plot(figure, interval, profiledata(end-profilerduration+1:end));
 	end
 end
 
-function ProfilePauseButtonPushed(button, event)
+function ProfilerDurationChanged(dropdown, event)
+	global profilerduration;
+
+	x = split(convertCharsToStrings(dropdown.Value), " ");
+
+	if x(1) == "everything"
+		profilerduration = 0;
+		return
+	end
+
+	val = double(x(1));
+
+	if startsWith(x(2), "minute")
+		val = val * 60;
+	end
+
+	if startsWith(x(2), "hour")
+		val = val * 3600;
+	end
+
+	profilerduration = val;
+end
+
+function ProfilerPauseButtonPushed(button, event)
 	global profilerrunning;
 
 	if profilerrunning == 0
