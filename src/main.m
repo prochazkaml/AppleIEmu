@@ -10,7 +10,6 @@
 % TODO
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
-% - test MATLAB's audio capability
 % - add the Integer BASIC ROM
 
 clc; clearvars;
@@ -55,7 +54,7 @@ end
 
 % Subroutines
 
-%#include "src/gui/settings/terminal/subroutines.m"
+%#include "src/gui/settings/subroutines.m"
 %#include "src/gui/emulator/subroutines.m"
 %#include "src/gui/terminal/subroutines.m"
 %#include "src/gui/profiler/subroutines.m"
