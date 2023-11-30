@@ -9,8 +9,8 @@ ProfilerTabGridLayout.RowHeight = {'1x', 30};
 
 % Create ProfilerFigure
 ProfilerFigure = uiaxes(ProfilerTabGridLayout);
-xlabel(ProfilerFigure, 'Time since startup (s)');
 ylabel(ProfilerFigure, 'Executed instructions per second');
+ylim(ProfilerFigure, [0 inf]);
 ProfilerFigure.Toolbar.Visible = 'off';
 ProfilerFigure.Layout.Row = 1;
 ProfilerFigure.Layout.Column = 1;
@@ -45,6 +45,13 @@ ProfilerDurationDropDown.Value = '30 seconds';
 
 % Create PauseProfilerButton
 PauseProfilerButton = uibutton(ProfilerTabControlsGridLayout, 'push');
+PauseProfilerButton.ButtonPushedFcn = @ProfilePauseButtonPushed;
 PauseProfilerButton.Layout.Row = 1;
 PauseProfilerButton.Layout.Column = 4;
 PauseProfilerButton.Text = 'Pause profiler';
+
+global profilerrunning;
+profilerrunning = 1;
+
+global profilerperiod;
+profilerperiod = 30;
