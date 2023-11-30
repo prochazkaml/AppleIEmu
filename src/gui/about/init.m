@@ -34,7 +34,7 @@ AboutDescLabel = uilabel(AboutDescGridLayout);
 AboutDescLabel.VerticalAlignment = 'top';
 AboutDescLabel.Layout.Row = 2;
 AboutDescLabel.Layout.Column = 1;
-AboutDescLabel.Text = {'A reasonably fast Apple I emulator, assembler and debugger in MATLAB.'; ''; '(logo source: Stable Diffusion + my l33t GIMP skills)'};
+AboutDescLabel.Text = {'A reasonably fast Apple I emulator and debugger in MATLAB.'; ''; '(logo source: Stable Diffusion + my l33t GIMP skills)'};
 
 % Create AboutLicenseLogo
 AboutLicenseLogo = uiimage(AboutTabGridLayout);
