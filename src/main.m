@@ -8,7 +8,6 @@
 %   - 256 byte WozMon ROM (0xFF00-0xFFFF).
 
 % TODO
-% - if an error occurs, shut down the figure
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
 % - test MATLAB's audio capability
@@ -44,31 +43,9 @@ kbdmap = [... % 0x00 = invalid character
 %#include "src/gui/init.m"
 %#include "src/cpucore/init.m"
 
-profileinsns = zeros(1);
-insns = 0;
-
-global shouldreset;
-shouldreset = 0;
-
-tic;
-
 while(isvalid(MainFigure))
-    if toc >= 1
-        tic;
-
-        % fprintf("Executed: %d\n", insns);
-        profileinsns(length(profileinsns) + 1) = insns;
-        UpdateProfiler(profileinsns, ProfilerFigure);
-
-        insns = 0;
-    end
-
-    if shouldreset == 1
-%#include "src/cpucore/reset.m"
-
-        shouldreset = 0;
-    end
-
+%#include "src/gui/profiler/update.m"
+%#include "src/cpucore/checkreset.m"
 %#include "src/gui/terminal/update.m"
 % #include "src/cpucore/debug.m"
 %#include "src/cpucore/executeinstruction.m"

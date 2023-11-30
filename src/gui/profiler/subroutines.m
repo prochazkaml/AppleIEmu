@@ -55,3 +55,8 @@ function ProfilerPauseButtonPushed(button, event)
 		button.Text = 'Unpause profiler';
 	end
 end
+
+function ProfilerResetButtonPushed(button, event)
+	global profilerreset;
+	profilerreset = 1;
+end

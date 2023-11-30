@@ -25,6 +25,7 @@ ProfilerTabControlsGridLayout.Layout.Column = 1;
 
 % Create ResetProfilerButton
 ResetProfilerButton = uibutton(ProfilerTabControlsGridLayout, 'push');
+ResetProfilerButton.ButtonPushedFcn = @ProfilerResetButtonPushed;
 ResetProfilerButton.Layout.Row = 1;
 ResetProfilerButton.Layout.Column = 5;
 ResetProfilerButton.Text = 'Reset profiler';
@@ -56,3 +57,11 @@ profilerrunning = 1;
 
 global profilerduration;
 profilerduration = 30;
+
+global profilerreset;
+profilerreset = 0;
+
+profileinsns = zeros(1);
+insns = 0;
+
+tic;

@@ -9,3 +9,6 @@ applerom = [
 % 6502 emulation core
 
 %#include "src/cpucore/reset.m"
+
+global shouldreset;
+shouldreset = 0;
