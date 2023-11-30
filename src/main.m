@@ -2,10 +2,10 @@
 % Written by Michal Procházka in 2023 for our ITE/MTLB classes.
 % Emulates (or it will, lol) the following hardware:
 %   - A mostly-compliant 6502 CPU (without the BRK instruction/flag, decimal mode, any undocumented opcodes or any interrupts).
-%   - 32 kB of SRAM (0x0000-0x7FFF).
+%   - 48 kB of SRAM (0x0000-0x7FFF).
 %   - An input/output interface (0xD010-0xD013).
 %   - idk-how-many-kb Integer BASIC ROM (idk which address)
-%   - 256 byte WozMon ROM (0xFF00-0xFFFF).
+%   - 4 kB WozMon + help text ROM (0xF000-0xFFFF).
 
 % TODO
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)

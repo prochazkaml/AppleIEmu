@@ -81,7 +81,7 @@ tutorial_msg_4:
 	.byt 13
 	.byt 'This emulator attempts to emulate the', 13
 	.byt 'Apple I hardware as closely as possible.';, 13
-	.byt 'However, the RAM was expanded to 32kB', 13
+	.byt 'However, the RAM was expanded to 48kB', 13
 	.byt 'and the ROM was expanded to 8kB to also', 13
 	.byt 'include Integer BASIC as well as this', 13
 	.byt 'tutorial program.', 13

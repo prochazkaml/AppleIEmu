@@ -1,7 +1,7 @@
 % __arg1 = source address
 % __ret1 = destination
 
-if(__arg1 >= 0x0000 && __arg1 < 0x8000) % Main system memory
+if(__arg1 >= 0x0000 && __arg1 < 0xC000) % Main system memory
 	__ret1 = sysmem(__arg1 + 1);
 elseif(__arg1 >= 0xF000 && __arg1 < 0x10000) % Apple system ROM
 	__ret1 = applerom(__arg1 - 0xEFFF); % __arg1 - 0xF000 + 1
