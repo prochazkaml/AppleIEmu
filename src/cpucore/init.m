@@ -1,10 +1,10 @@
 % 6502 memory spaces
 
-sysmem = zeros(1, 32768, 'uint8');
-
 applerom = [
 %#incbin "build/rom.bin"
 ];
+
+sysmem = [zeros(1, 65536 - length(applerom), 'uint8') applerom];
 
 % 6502 emulation core
 
