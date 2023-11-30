@@ -8,5 +8,5 @@ elseif(__arg1 == 0xD012) % DSP data register
 elseif(__arg1 == 0xD011 || __arg1 == 0xD013) % DSP/KBD control register
 	% Do nothing
 else
-	error("ERROR - INVALID MEMORY BYTE WRITE TO %04X: %02X\n", __arg1, __arg2)
+	EmuErrorHandler(sprintf("ERROR - INVALID MEMORY BYTE WRITE TO %04X: %02X\n", __arg1, __arg2), TerminalLabels);
 end

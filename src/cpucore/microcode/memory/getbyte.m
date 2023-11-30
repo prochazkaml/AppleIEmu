@@ -23,5 +23,5 @@ elseif(__arg1 == 0xD012) % DSP data register
 elseif(__arg1 == 0xD013) % DSP
 	__ret1 = 0x00; % Do nothing
 else
-	error("ERROR - INVALID MEMORY BYTE READ FROM %04X\n", __arg1)
+	EmuErrorHandler(sprintf("ERROR - INVALID MEMORY BYTE READ FROM %04X\n", __arg1), TerminalLabels);
 end
