@@ -1,8 +1,8 @@
-% 6502 Emulator for MethLab®
+% Apple I Emulator for MATLAB
 % Written by Michal Procházka in 2023 for our ITE/MTLB classes.
 % Emulates (or it will, lol) the following hardware:
 %   - A mostly-compliant 6502 CPU (without the BRK instruction/flag, decimal mode, any undocumented opcodes or any interrupts).
-%   - 48 kB of SRAM (0x0000-0x7FFF).
+%   - 48 kB of SRAM (0x0000-0xBFFF).
 %   - An input/output interface (0xD010-0xD013).
 %   - idk-how-many-kb Integer BASIC ROM (idk which address)
 %   - 4 kB WozMon + help text ROM (0xF000-0xFFFF).
