@@ -3,8 +3,8 @@
 
 if(__arg1 >= 0x0000 && __arg1 < 0xC000) % Main system memory
 	__ret1 = sysmem(__arg1 + 1);
-elseif(__arg1 >= 0xF000 && __arg1 < 0x10000) % Apple system ROM
-	__ret1 = applerom(__arg1 - 0xEFFF); % __arg1 - 0xF000 + 1
+elseif(__arg1 >= 0xE000 && __arg1 < 0x10000) % Apple system ROM
+	__ret1 = applerom(__arg1 - 0xDFFF); % __arg1 - 0xF000 + 1
 elseif(__arg1 == 0xD010) % KBD data register
 	if(keybuf == 0x00)
 		__ret1 = 0x00;

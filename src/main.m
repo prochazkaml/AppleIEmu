@@ -10,7 +10,6 @@
 % TODO
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
-% - add the Integer BASIC ROM
 
 clc; clearvars;
 

@@ -2,6 +2,9 @@
 
 ; F000 = TUTORIAL
 
+* = $E000
+	.bin 0, 0, "rom/intbasic.bin"
+
 * = $F000
 TUTORIAL_BUFFER = $4000
 unpack_src = $10
