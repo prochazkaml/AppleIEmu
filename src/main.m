@@ -4,7 +4,7 @@
 %   - A mostly-compliant 6502 CPU (without the BRK instruction/flag, decimal mode, any undocumented opcodes or any interrupts).
 %   - 48 kB of SRAM (0x0000-0xBFFF).
 %   - An input/output interface (0xD010-0xD013).
-%   - idk-how-many-kb Integer BASIC ROM (idk which address)
+%   - 4 kB Integer BASIC ROM (0xE000-0xEFFF).
 %   - 4 kB WozMon + help text ROM (0xF000-0xFFFF).
 
 % TODO
