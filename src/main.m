@@ -77,7 +77,6 @@ end
 
 % Subroutines
 
-%#include "src/cpucore/subroutines.m"
 %#include "src/gui/settings/terminal/subroutines.m"
 %#include "src/gui/emulator/subroutines.m"
 %#include "src/gui/terminal/subroutines.m"
