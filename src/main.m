@@ -11,7 +11,7 @@
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
 % - test MATLAB's audio capability
-% - capture keystrokes only on the Emulator tab
+% - add the Integer BASIC ROM
 
 clc; clearvars;
 

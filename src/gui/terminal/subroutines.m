@@ -21,16 +21,18 @@ function CursorBlink(tmr, cursor)
     end
 end
 
-function MainFigureKeyPress(~, EventData)
-    global kbdmap;
-    global keybuf;
-
-    disp(EventData);
-
-    chrid = uint8(EventData.Character);
+function MainFigureKeyPress(EventData, TabGroup)
+    if convertCharsToStrings(TabGroup.SelectedTab.Title) == "Emulator"
+        global kbdmap;
+        global keybuf;
     
-    if (size(chrid, 1) == 1) && (chrid < size(kbdmap, 2)) && (kbdmap(chrid + 1) ~= 0x00)
-        keybuf = kbdmap(chrid + 1) + 0x80;
+        disp(EventData);
+
+        chrid = uint8(EventData.Character);
+        
+        if (size(chrid, 1) == 1) && (chrid < size(kbdmap, 2)) && (kbdmap(chrid + 1) ~= 0x00)
+            keybuf = kbdmap(chrid + 1) + 0x80;
+        end
     end
 end
 

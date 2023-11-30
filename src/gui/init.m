@@ -5,7 +5,6 @@ MainFigure = uifigure('Visible', 'off');
 MainFigure.AutoResizeChildren = 'off';
 MainFigure.Position = [100 100 640 480];
 MainFigure.Name = 'A dubiously accurate Apple I emulator';
-MainFigure.KeyPressFcn = @MainFigureKeyPress;
 
 % Create GridLayout
 GridLayout = uigridlayout(MainFigure);
@@ -18,6 +17,8 @@ TabGroup = uitabgroup(GridLayout);
 TabGroup.AutoResizeChildren = 'off';
 TabGroup.Layout.Row = 1;
 TabGroup.Layout.Column = 1;
+
+MainFigure.KeyPressFcn = @(~, event) MainFigureKeyPress(event, TabGroup);
 
 %#include "src/gui/emulator/init.m"
 %#include "src/gui/terminal/init.m"
