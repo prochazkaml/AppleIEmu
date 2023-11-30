@@ -12,9 +12,7 @@
 % - if an error occurs, shut down the figure
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
-% - try out some rendering options
 % - test MATLAB's audio capability
-% - integrated editor, assembler & debugger
 
 clc; clearvars;
 
@@ -46,15 +44,11 @@ kbdmap = [... % 0x00 = invalid character
 %#include "src/gui/init.m"
 %#include "src/cpucore/init.m"
 
-global running;
-running = 1;
-
-global profileinsns;
 profileinsns = zeros(1);
 insns = 0;
 tic;
 
-while(running && isvalid(MainFigure))
+while(isvalid(MainFigure))
     if toc >= 1
         tic;
 

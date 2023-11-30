@@ -11,12 +11,9 @@ function label = CreateTermLabel(grid, row, text)
 end
 
 function CursorBlink(tmr, cursor)
-    global running;
-
     if isvalid(cursor) == false
         stop(tmr);
         disp("UI figure closed, quitting.");
-        running = 0;
     elseif mod(tmr.TasksExecuted, 2) == 0
         set(cursor, 'Visible', 1);
     else
