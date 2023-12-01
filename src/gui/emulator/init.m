@@ -43,10 +43,12 @@ EmulatorDebuggerKnob.Layout.Column = 1;
 
 % Create EmulatorCpuSpeedKnob
 EmulatorCpuSpeedKnob = uiknob(EmulatorControlsLayout, 'continuous');
-EmulatorCpuSpeedKnob.MajorTickLabels = {'0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'};
+EmulatorCpuSpeedKnob.Limits = [0 100];
 EmulatorCpuSpeedKnob.Layout.Row = 3;
 EmulatorCpuSpeedKnob.Layout.Column = 1;
 EmulatorCpuSpeedKnob.Value = 100;
+
+cpulimiterlasttoc = 0;
 
 % Create CPUspeedKnobLabel
 CPUspeedKnobLabel = uilabel(EmulatorControlsLayout);

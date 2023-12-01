@@ -10,6 +10,7 @@
 % TODO
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
+% - the debugger
 
 clc; clearvars;
 
@@ -41,11 +42,14 @@ kbdmap = [... % 0x00 = invalid character
 %#include "src/gui/init.m"
 %#include "src/cpucore/init.m"
 
-while(isvalid(MainFigure))
+tic;
+
+while 1
 %#include "src/gui/profiler/update.m"
 %#include "src/cpucore/checkreset.m"
 %#include "src/gui/terminal/update.m"
 % #include "src/cpucore/debug.m"
+%#include "src/gui/emulator/limiter.m"
 %#include "src/cpucore/executeinstruction.m"
 
     insns = insns + 1;

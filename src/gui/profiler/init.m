@@ -64,4 +64,4 @@ profilerreset = 0;
 profileinsns = zeros(1);
 insns = 0;
 
-tic;
+profilerlasttoc = 0;

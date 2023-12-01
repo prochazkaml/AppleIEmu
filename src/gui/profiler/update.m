@@ -1,5 +1,5 @@
-if toc >= 1
-	tic;
+if (toc - 1) >= profilerlasttoc
+	profilerlasttoc = profilerlasttoc + 1;
 
 	% fprintf("Executed: %d\n", insns);
 
