@@ -23,7 +23,7 @@ EmulatorTabTerminalLayout.BackgroundColor = [0 0 0];
 % Create EmulatorControlsLayout
 EmulatorControlsLayout = uigridlayout(EmulatorTabGridLayout);
 EmulatorControlsLayout.ColumnWidth = {'1x'};
-EmulatorControlsLayout.RowHeight = {125, 25, 125, 25, '1x', 50};
+EmulatorControlsLayout.RowHeight = {125, 25, 125, 25, '1x', 50, 50};
 EmulatorControlsLayout.Padding = [0 0 0 0];
 EmulatorControlsLayout.Layout.Row = 1;
 EmulatorControlsLayout.Layout.Column = 2;
@@ -57,11 +57,27 @@ CPUspeedKnobLabel.Layout.Row = 4;
 CPUspeedKnobLabel.Layout.Column = 1;
 CPUspeedKnobLabel.Text = 'CPU speed';
 
+% Create EmulatorStepButton
+EmulatorStepButton = uibutton(EmulatorControlsLayout, 'push');
+EmulatorStepButton.Layout.Row = 6;
+EmulatorStepButton.Layout.Column = 1;
+EmulatorStepButton.Text = 'SINGLE STEP';
+EmulatorStepButton.Visible = 0;
+EmulatorStepButton.ButtonPushedFcn = @EmulatorStepButtonPushed;
+
 % Create EmulatorResetButton
 EmulatorResetButton = uibutton(EmulatorControlsLayout, 'push');
 EmulatorResetButton.BackgroundColor = [1 0 0];
 EmulatorResetButton.FontColor = [1 1 1];
-EmulatorResetButton.Layout.Row = 6;
+EmulatorResetButton.Layout.Row = 7;
 EmulatorResetButton.Layout.Column = 1;
 EmulatorResetButton.Text = 'RESET SYSTEM';
 EmulatorResetButton.ButtonPushedFcn = @EmulatorResetButtonPushed;
+
+global shouldreset;
+shouldreset = 0;
+
+global shouldstep;
+shouldstep = 0;
+
+EmulatorCpuSpeedKnob.ValueChangedFcn = @(src, event) EmulatorCheckSingleStepVisible(EmulatorStepButton, event.Value == 0);
