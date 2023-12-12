@@ -10,7 +10,6 @@
 % TODO
 % - FINISH ADC/SBC (THE OVERFLOW FLAG)
 % - RUN A TEST SUITE FOR ALL INSTRUCTIONS
-% - the debugger
 
 clc; clearvars;
 
@@ -51,6 +50,7 @@ while 1
 % #include "src/cpucore/debug.m"
 %#include "src/gui/emulator/limiter.m"
 %#include "src/cpucore/executeinstruction.m"
+%#include "src/gui/emulator/debugger.m"
 
     insns = insns + 1;
 end
