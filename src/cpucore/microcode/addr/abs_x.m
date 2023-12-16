@@ -2,6 +2,6 @@
 
 %#incfun "src/cpucore/microcode/memory/getword.m" __ret1 = pc
 
-__ret1 = __ret1 + uint16(y);
+__ret1 = __ret1 + uint16(x);
 
 pc = pc + 2;
