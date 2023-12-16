@@ -14,7 +14,13 @@ else
 	CLR_CARRY_FLAG;
 end
 
-% TODO - overflow flag
+% Calculate overflow flag
+
+if(bitand(bitand(bitxor(__ret1, uint8(tmp16_2)), bitxor(0xFF - __arg1, uint8(tmp16_2))), 0x80) ~= 0)
+	SET_OVERFLOW_FLAG;
+else
+	CLR_OVERFLOW_FLAG;
+end
 
 __ret1 = uint8(tmp16_2);
 
