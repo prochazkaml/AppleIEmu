@@ -1,15 +1,11 @@
 % Apple I Emulator for MATLAB
 % Written by Michal Procházka in 2023 for our ITE/MTLB classes.
 % Emulates the following hardware:
-%   - A mostly-compliant 6502 CPU (without the BRK instruction/flag, decimal mode, any undocumented opcodes or any interrupts).
+%   - A mostly-compliant 6502 CPU (without decimal mode, any undocumented opcodes or any interrupts).
 %   - 48 kB of SRAM (0x0000-0xBFFF).
 %   - An input/output interface (0xD010-0xD013).
 %   - 4 kB Integer BASIC ROM (0xE000-0xEFFF).
 %   - 4 kB WozMon + help text ROM (0xF000-0xFFFF).
-
-% TODO
-% - FINISH ADC/SBC (THE OVERFLOW FLAG)
-% - RUN A TEST SUITE FOR ALL INSTRUCTIONS
 
 clc; clearvars;
 
@@ -50,6 +46,21 @@ while 1
 % #include "src/cpucore/debug.m"
 %#include "src/gui/emulator/limiter.m"
 %#include "src/cpucore/executeinstruction.m"
+
+%{
+if pc == 0x0000
+    EmulatorDebuggerKnob.Value = "On";
+    emulatordebugger = 1;
+
+    EmulatorCpuSpeedKnob.Value = 0;
+    emulatorcpuspeed = 0;
+
+    EmulatorStepButton.Visible = 1;
+
+    GridLayout9.RowHeight{2} = 100;
+end
+%}
+
 %#include "src/gui/emulator/debugger.m"
 
     insns = insns + 1;
