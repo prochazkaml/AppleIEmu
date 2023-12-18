@@ -145,7 +145,7 @@ EmulatorTabTerminalLayout.BackgroundColor = [0 0 0];
 % Create EmulatorControlsLayout
 EmulatorControlsLayout = uigridlayout(EmulatorTabGridLayout);
 EmulatorControlsLayout.ColumnWidth = {'1x'};
-EmulatorControlsLayout.RowHeight = {125, 25, 125, 25, '1x', 50, 50};
+EmulatorControlsLayout.RowHeight = {125, 25, 125, 25, '1x', 50, 50, 50};
 EmulatorControlsLayout.Padding = [0 0 0 0];
 EmulatorControlsLayout.Layout.Row = 1;
 EmulatorControlsLayout.Layout.Column = 2;
@@ -187,14 +187,42 @@ EmulatorStepButton.Text = 'SINGLE STEP';
 EmulatorStepButton.Visible = 0;
 EmulatorStepButton.ButtonPushedFcn = @EmulatorStepButtonPushed;
 
+% Create EmulatorSaveLoadLayout
+EmulatorSaveLoadLayout = uigridlayout(EmulatorControlsLayout);
+EmulatorSaveLoadLayout.ColumnWidth = {'1x', '1x'};
+EmulatorSaveLoadLayout.RowHeight = {'1x'};
+EmulatorSaveLoadLayout.Layout.Row = 7;
+EmulatorSaveLoadLayout.Layout.Column = 1;
+EmulatorSaveLoadLayout.Padding = [0 0 0 0];
+
+% Create EmulatorSaveButton
+EmulatorSaveButton = uibutton(EmulatorSaveLoadLayout, 'push');
+EmulatorSaveButton.Layout.Row = 1;
+EmulatorSaveButton.Layout.Column = 1;
+EmulatorSaveButton.Text = 'SAVE';
+EmulatorSaveButton.ButtonPushedFcn = @EmulatorSaveButtonPushed;
+
+% Create EmulatorLoadButton
+EmulatorLoadButton = uibutton(EmulatorSaveLoadLayout, 'push');
+EmulatorLoadButton.Layout.Row = 1;
+EmulatorLoadButton.Layout.Column = 2;
+EmulatorLoadButton.Text = 'LOAD';
+EmulatorLoadButton.ButtonPushedFcn = @EmulatorLoadButtonPushed;
+
 % Create EmulatorResetButton
 EmulatorResetButton = uibutton(EmulatorControlsLayout, 'push');
 EmulatorResetButton.BackgroundColor = [1 0 0];
 EmulatorResetButton.FontColor = [1 1 1];
-EmulatorResetButton.Layout.Row = 7;
+EmulatorResetButton.Layout.Row = 8;
 EmulatorResetButton.Layout.Column = 1;
 EmulatorResetButton.Text = 'RESET SYSTEM';
 EmulatorResetButton.ButtonPushedFcn = @EmulatorResetButtonPushed;
+
+global shouldsave;
+shouldsave = 0;
+
+global shouldload;
+shouldload = 0;
 
 global shouldreset;
 shouldreset = 0;

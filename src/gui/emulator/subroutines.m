@@ -8,6 +8,16 @@ function EmulatorStepButtonPushed(src, event)
 	shouldstep = 1;
 end
 
+function EmulatorLoadButtonPushed(src, event)
+	global shouldload;
+	shouldload = 1;
+end
+
+function EmulatorSaveButtonPushed(src, event)
+	global shouldsave;
+	shouldsave = 1;
+end
+
 function EmulatorCheckSingleStepVisible(button, shouldbevisible)
 	button.Visible = shouldbevisible;
 end

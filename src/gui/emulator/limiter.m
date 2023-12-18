@@ -2,6 +2,8 @@ if (toc - .1) >= emulatoruilasttoc
 	emulatoruilasttoc = emulatoruilasttoc + .1;
 	emulatorcpuspeed = EmulatorCpuSpeedKnob.Value;
 	emulatordebugger = EmulatorDebuggerKnob.Value == "On";
+
+%#include "src/gui/emulator/savestates.m"
 end
 
 if emulatorcpuspeed ~= 100

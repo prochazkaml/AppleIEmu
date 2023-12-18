@@ -44,6 +44,7 @@ while 1
 %#include "src/cpucore/checkreset.m"
 %#include "src/gui/terminal/update.m"
 % #include "src/cpucore/debug.m"
+%#include "src/gui/emulator/debugger.m"
 %#include "src/gui/emulator/limiter.m"
 %#include "src/cpucore/executeinstruction.m"
 
@@ -60,8 +61,6 @@ if pc == 0x0000
     GridLayout9.RowHeight{2} = 100;
 end
 %}
-
-%#include "src/gui/emulator/debugger.m"
 
     insns = insns + 1;
 end
