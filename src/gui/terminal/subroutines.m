@@ -30,7 +30,10 @@ function MainFigureKeyPress(EventData, TabGroup)
 
         chrid = uint8(EventData.Character);
         
+        disp(chrid);
+
         if (size(chrid, 1) == 1) && (chrid < size(kbdmap, 2)) && (kbdmap(chrid + 1) ~= 0x00)
+            disp(kbdmap(chrid + 1) + 0x80);
             keybuf = kbdmap(chrid + 1) + 0x80;
         end
     end
