@@ -1,4 +1,4 @@
-# ML6502 - An Apple I emulator for MATLAB®
+# An Apple I emulator for MATLAB
 
 > When life gives you lemons, make lemonade.
 
