@@ -36,12 +36,6 @@ AboutDescLabel.Layout.Row = 2;
 AboutDescLabel.Layout.Column = 1;
 AboutDescLabel.Text = {'A reasonably fast Apple I emulator and debugger in MATLAB.'; ''; '(logo source: Stable Diffusion + my l33t GIMP skills)'};
 
-% Create AboutLicenseLogo
-AboutLicenseLogo = uiimage(AboutTabGridLayout);
-AboutLicenseLogo.Layout.Row = 2;
-AboutLicenseLogo.Layout.Column = 1;
-AboutLicenseLogo.ImageSource = fullfile('../assets', 'gnu.svg');
-
 % Create GridLayout7
 GridLayout7 = uigridlayout(AboutTabGridLayout);
 GridLayout7.RowHeight = {'1x'};
@@ -49,12 +43,12 @@ GridLayout7.Padding = [0 0 0 0];
 GridLayout7.Layout.Row = 3;
 GridLayout7.Layout.Column = 2;
 
-% Create AboutGPLButton
-AboutGPLButton = uibutton(GridLayout7, 'push');
-AboutGPLButton.ButtonPushedFcn = @AboutGPLButtonPushed;
-AboutGPLButton.Layout.Row = 1;
-AboutGPLButton.Layout.Column = 2;
-AboutGPLButton.Text = 'Read the GPL v3.0 license';
+% Create AboutBSDButton
+AboutBSDButton = uibutton(GridLayout7, 'push');
+AboutBSDButton.ButtonPushedFcn = @AboutBSDButtonPushed;
+AboutBSDButton.Layout.Row = 1;
+AboutBSDButton.Layout.Column = 2;
+AboutBSDButton.Text = 'Read the BSD 3-Clause license';
 
 % Create AboutMATLABLicenseButton
 AboutMATLABLicenseButton = uibutton(GridLayout7, 'push');
@@ -68,4 +62,4 @@ AboutLicenseLabel = uilabel(AboutTabGridLayout);
 AboutLicenseLabel.WordWrap = 'on';
 AboutLicenseLabel.Layout.Row = 2;
 AboutLicenseLabel.Layout.Column = 2;
-AboutLicenseLabel.Text = 'If you ignore the absolutely proprietary MATLAB runtime binary, this software is considered free software, licensed under the GNU General Public License v3.0.';
+AboutLicenseLabel.Text = 'If you ignore the absolutely proprietary MATLAB runtime binary, this software is considered free software, licensed under the BSD 3-Clause license.';
